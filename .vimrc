@@ -2,7 +2,7 @@ syntax on
 set mouse=a
 set nocompatible
 set incsearch
-set textwidth=100
+set textwidth=80
 set expandtab
 set tags=tags;/
 set cursorline
