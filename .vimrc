@@ -43,10 +43,5 @@ au FileType javascript set shiftwidth=2
 " Set FileType javascript for .json files
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
-" Restore session when opening vim
-function! RestoreSession()
-    if argc() == 0 "vim called without arguments
-        execute 'source session.vim'
-    end
-endfunction
-autocmd VimEnter * call RestoreSession()
+" Start pathogen to load all the plugins
+call pathogen#infect() 
