@@ -1,1 +1,12 @@
 This repository contains all the files and setup tools for my home directory
+
+In order to grab the files from this repository the simplest is to init an empty
+repository in your homedirectory and add github as an origin:
+```
+cd
+git init
+git remote add origin git@github.com:ocr/SetMeUp
+git branch master --set-upstream origin/master
+git checkout master
+git pull
+```
