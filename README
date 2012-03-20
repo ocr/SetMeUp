@@ -7,6 +7,6 @@ cd
 git init
 git remote add origin git@github.com:ocr/SetMeUp
 git branch master --set-upstream origin/master
+git fetch origin
 git checkout master
-git pull
 ```
