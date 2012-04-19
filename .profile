@@ -32,9 +32,13 @@ if [ -d ~/pkgconfig ] ; then
     export PKG_CONFIG_PATH=~/pkgconfig:"${PKG_CONFIG_PATH}"
 fi
 
+# Default editor
 export EDITOR=vim
+
 # To prevent loggin out with Ctrl+d:
 export IGNOREEOF=2
+
+# Nicer version of ls
 alias ls='ls --color'
 
 # OASISDIR
@@ -46,8 +50,6 @@ else
   echo "64 BIT SYSTEM";
   export OASIS_DIR=/home/crameri/oasis;
 fi
-  
-
 source $OASIS_DIR/env.sh
 
 export PATH=/home/cluster/bin:$PATH
