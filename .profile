@@ -95,7 +95,7 @@ commits_behind_develop() {
     if [[ $d == "1" ]]; then
         n=`git rev-list HEAD..develop | wc -l`
         if [[ $n != "0" ]]; then
-            echo "${BLINK}, $n commits behind develop${NO_BLINK}"
+            echo "${BLINK}, $n commit(s) behind develop${NO_BLINK}"
         fi;
     fi;
 }
