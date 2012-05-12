@@ -41,16 +41,22 @@ export IGNOREEOF=2
 # Nicer version of ls
 alias ls='ls --color'
 
-# OASISDIR
 IS_64BIT=`uname -a | grep x86_64`
+
+# OASIS
 if [[ -z $IS_64BIT ]]; then
   echo "32 BIT SYSTEM";
-  export OASIS_DIR=/home/crameri/svn32/0.2;
+  if [[ -d "/home/crameri/svn32/0.2" ]]; then
+      export OASIS_DIR=/home/crameri/svn32/0.2;
+      source $OASIS_DIR/env.sh
+  fi;
 else
   echo "64 BIT SYSTEM";
-  export OASIS_DIR=/home/crameri/oasis;
+  if [[ -d "/home/crameri/oasis" ]]; then
+      export OASIS_DIR=/home/crameri/oasis;
+      source $OASIS_DIR/env.sh
+  fi;
 fi
-source $OASIS_DIR/env.sh
 
 export PATH=/home/cluster/bin:$PATH
 
