@@ -15,6 +15,16 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+PLATFORM=`uname`;
+case $PLATFORM in
+    "Linux")
+        # Nicer version of ls
+        alias ls='ls --color';;
+    "Darwin")
+        alias ls='ls -G';;
+esac
+
+
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/bin ] ; then
     export PATH=~/bin:"${PATH}"
@@ -37,9 +47,6 @@ export EDITOR=vim
 
 # To prevent loggin out with Ctrl+d:
 export IGNOREEOF=2
-
-# Nicer version of ls
-alias ls='ls --color'
 
 IS_64BIT=`uname -a | grep x86_64`
 
