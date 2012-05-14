@@ -19,9 +19,12 @@ PLATFORM=`uname`;
 case $PLATFORM in
     "Linux")
         # Nicer version of ls
-        alias ls='ls --color';;
+        alias ls='ls --color'
+        ;;
     "Darwin")
-        alias ls='ls -G';;
+        alias ls='ls -G'
+        export JAVA_HOME=/Library/Java/Home/
+        ;;
 esac
 
 
