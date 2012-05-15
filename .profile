@@ -19,9 +19,11 @@ PLATFORM=`uname`;
 case $PLATFORM in
     "Linux")
         # Nicer version of ls
+        echo "*** Linux ***"
         alias ls='ls --color'
         ;;
     "Darwin")
+        echo "/// Mac OSX \\\\\\"
         alias ls='ls -G'
         export JAVA_HOME=/Library/Java/Home/
         ;;
