@@ -129,7 +129,7 @@ git_prompt() {
     fi
 }
 build_prompt() {
-    PS1="\w $(git_prompt) \$${COLOR_NONE}➔ "
+    PS1="${GREEN}$HOSTNAME${COLOR_NONE} \w $(git_prompt) \$${COLOR_NONE}➔ "
 }
 
 PROMPT_COMMAND=build_prompt;
