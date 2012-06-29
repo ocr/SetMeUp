@@ -33,6 +33,9 @@ esac
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/bin ] ; then
     export PATH=~/bin:"${PATH}"
+    if [ -d ~/bin/depot_tools ]; then
+        export PATH=~/bin:"${PATH}"
+    fi
 fi
 # same thing for LD_LIBRARY_PATH and ~/lib
 if [ -d ~/lib ] ; then
