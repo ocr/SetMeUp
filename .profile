@@ -31,9 +31,9 @@ esac
 
 
 # set PATH so it includes user's private bin if it exists
-if [ -d ~/bin ] ; then
-    export PATH=~/bin:"${PATH}"
-    if [ -d ~/bin/depot_tools ]; then
+if [ -d ~/localbin ] ; then
+    export PATH=~/localbin:"${PATH}"
+    if [ -d ~/localbin/depot_tools ]; then
         export PATH=~/bin:"${PATH}"
     fi
 fi
@@ -73,7 +73,7 @@ else
   fi;
 fi
 
-export PATH=/home/cluster/bin:$PATH
+export PATH=/home/cluster/bin:/usr/local/share/npm/bin:$PATH
 
 # QT (qt-webkit, custom version)
 # export PATH=/usr/local/Trolltech/Qt-4.8.0/bin:$PATH
