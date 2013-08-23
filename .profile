@@ -112,7 +112,7 @@ git_branch() {
 }
 commits_behind_develop() {
     # Is there a develop branch ?
-    d=`git branch 2>/dev/null | grep -P '\s+develop$' | wc -l`
+    d=`git branch 2>/dev/null | egrep '\s+develop$' | wc -l`
     if [[ $d == "1" ]]; then
         n=`git rev-list HEAD..develop | wc -l`
         if [[ $n != "0" ]]; then
