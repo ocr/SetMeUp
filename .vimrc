@@ -18,6 +18,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'pangloss/vim-javascript'
 Bundle 'maksimr/vim-jsbeautify'
+Bundle 'tpope/vim-fugitive'
 
 filetype plugin indent on
 
