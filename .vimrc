@@ -13,7 +13,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'scrooloose/syntastic'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'pangloss/vim-javascript'
@@ -30,7 +30,7 @@ let g:syntastic_warning_symbol = '∆∆'
 let g:syntastic_style_warning_symbol = '≈≈'
 
 " Status bar
-let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
 set laststatus=2
 
 " Beautifier
