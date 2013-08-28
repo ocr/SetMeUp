@@ -17,6 +17,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'pangloss/vim-javascript'
+Bundle 'maksimr/vim-jsbeautify'
 
 filetype plugin indent on
 
@@ -31,6 +32,9 @@ let g:syntastic_style_warning_symbol = '≈≈'
 " Status bar
 let g:Powerline_symbols = 'fancy'
 set laststatus=2
+
+" Beautifier
+autocmd FileType javascript noremap <buffer> <leader>ff :call JsBeautify()<cr>
 
 "Emacs like key mappings for moving the cursor arround
 :map <C-e> $
