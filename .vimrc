@@ -7,7 +7,30 @@ set expandtab
 set tags=tags;/
 set cursorline
 "set cursorline
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/syntastic'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'pangloss/vim-javascript'
+
 filetype plugin indent on
+
+" syntastic
+let g:syntastic_check_on_open = 1
+let g:syntastic_enable_signs = 1
+let g:syntastic_error_symbol = '✗✗'
+let g:syntastic_style_error_symbol = '✠✠'
+let g:syntastic_warning_symbol = '∆∆'
+let g:syntastic_style_warning_symbol = '≈≈'
+
+" Status bar
+let g:Powerline_symbols = 'fancy'
+set laststatus=2
 
 "Emacs like key mappings for moving the cursor arround
 :map <C-e> $
@@ -42,6 +65,3 @@ au FileType javascript set shiftwidth=2
 
 " Set FileType javascript for .json files
 autocmd BufNewFile,BufRead *.json set ft=javascript
-
-" Start pathogen to load all the plugins
-call pathogen#infect() 
