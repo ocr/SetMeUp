@@ -37,6 +37,9 @@ if [ -d ~/localbin ] ; then
         export PATH=~/bin:"${PATH}"
     fi
 fi
+if [ -a ~/bin ]; then
+    export PATH=~/bin:$PATH
+fi
 # same thing for LD_LIBRARY_PATH and ~/lib
 if [ -d ~/lib ] ; then
     export LD_LIBRARY_PATH=~/lib:"${LD_LIBRARY_PATH}"
