@@ -6,6 +6,8 @@ set textwidth=80
 set expandtab
 set tags=tags;/
 set cursorline
+set modeline
+set modelines=2
 "set cursorline
 filetype off
 
