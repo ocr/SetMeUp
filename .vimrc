@@ -21,6 +21,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'pangloss/vim-javascript'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'tpope/vim-fugitive'
+Bundle 'ocr/vim-sessions'
 
 filetype plugin indent on
 
@@ -31,6 +32,12 @@ let g:syntastic_error_symbol = '✗✗'
 let g:syntastic_style_error_symbol = '✠✠'
 let g:syntastic_warning_symbol = '∆∆'
 let g:syntastic_style_warning_symbol = '≈≈'
+let g:syntastic_cpp_no_include_search = 1
+let g:syntastic_cpp_auto_refresh_includes = 1
+let g:syntastic_cpp_include_dirs = [
+            \ '/usr/include/qt4/QtCore',
+            \ '/usr/include/qt4/QtGui',
+            \ '/usr/include/qt4/QtNetwork']
 
 " Status bar
 let g:airline_powerline_fonts = 1
