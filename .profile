@@ -140,3 +140,4 @@ PROMPT_COMMAND=build_prompt;
 # BUG BUSTER
 export BBSETUP_HOME=~/bugbuster/bugbuster-setup;
 export PYTHONPATH=~/bugbuster/bugbuster-setup/lib:$PYTHONPATH;
+export EDITOR=vim
