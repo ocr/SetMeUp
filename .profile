@@ -7,12 +7,21 @@
 # the default umask is set in /etc/profile
 #umask 022
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
     fi
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
 fi
 
 PLATFORM=`uname`;
@@ -132,7 +141,7 @@ git_prompt() {
     fi
 }
 build_prompt() {
-    PS1="${GREEN}$HOSTNAME${COLOR_NONE} \w $(git_prompt) \$${COLOR_NONE}➔ "
+    PS1="${GREEN}$HOSTNAME${COLOR_NONE} \w $(git_prompt) \$${COLOR_NONE} "
 }
 
 PROMPT_COMMAND=build_prompt;
