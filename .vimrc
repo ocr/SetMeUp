@@ -11,18 +11,19 @@ set modelines=2
 "set cursorline
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'bling/vim-airline'
-Bundle 'scrooloose/syntastic'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'pangloss/vim-javascript'
-Bundle 'maksimr/vim-jsbeautify'
-Bundle 'tpope/vim-fugitive'
-Bundle 'ocr/vim-sessions'
+Plugin 'gmarik/vundle'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/syntastic'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'pangloss/vim-javascript'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'tpope/vim-fugitive'
+Plugin 'ocr/vim-sessions'
 
+call vundle#end()
 filetype plugin indent on
 
 " syntastic
