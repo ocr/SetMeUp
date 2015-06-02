@@ -22,6 +22,24 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ocr/vim-sessions'
+Plugin 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+
+" JS Beautifier {{{
+
+Plugin 'beautify-web/js-beautify'
+augroup JsBeautify_au
+ autocmd!
+ " Beautifier
+ autocmd FileType javascript noremap <buffer> ff :call JsBeautify()<cr>
+ " for html
+ autocmd FileType html noremap <buffer> ff :call HtmlBeautify()<cr>
+ " for css or scss
+ autocmd FileType css noremap <buffer> ff :call CSSBeautify()<cr>
+augroup END
+
+" }}}
+
+Plugin 'lukaszb/vim-web-indent'
 
 call vundle#end()
 filetype plugin indent on
