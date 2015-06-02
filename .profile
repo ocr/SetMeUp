@@ -34,7 +34,7 @@ case $PLATFORM in
     "Darwin")
         echo "/// Mac OSX \\\\\\"
         alias ls='ls -G'
-        export JAVA_HOME=/Library/Java/Home/
+        export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
         ;;
 esac
 
