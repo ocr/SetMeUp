@@ -34,7 +34,6 @@ case $PLATFORM in
     "Darwin")
         echo "/// Mac OSX \\\\\\"
         alias ls='ls -G'
-        export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
         ;;
 esac
 
@@ -150,3 +149,5 @@ PROMPT_COMMAND=build_prompt;
 export BBSETUP_HOME=~/bugbuster/bugbuster-setup;
 export PYTHONPATH=~/bugbuster/bugbuster-setup/lib:$PYTHONPATH;
 export EDITOR=vim
+
+source ~/.local_profile
