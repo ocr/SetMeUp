@@ -131,6 +131,8 @@ commits_behind_develop() {
         fi;
     fi;
 }
+
+source ~/.git-completion.bash
 git_prompt() {
     branch=$(git_branch);
     if [[ "$branch" == "" ]]; then
