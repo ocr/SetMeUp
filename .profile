@@ -37,6 +37,14 @@ case $PLATFORM in
         ;;
 esac
 
+# Bash history related stuff
+shopt -s histappend
+export HISTCONTROL=ignoredups:erasedups
+export HISTSIZE=100000
+export HISTFILESIZE=100000
+# After each command, append to the history file and reread it
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
 
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/localbin ] ; then
