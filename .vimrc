@@ -11,6 +11,10 @@ set modelines=2
 "set cursorline
 filetype off
 
+" Highlight unwanted white spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
