@@ -42,8 +42,6 @@ shopt -s histappend
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=100000
 export HISTFILESIZE=100000
-# After each command, append to the history file and reread it
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 
 # set PATH so it includes user's private bin if it exists
@@ -94,20 +92,6 @@ fi
 
 export PATH=/home/cluster/bin:/usr/local/share/npm/bin:$PATH
 
-# QT (qt-webkit, custom version)
-# export PATH=/usr/local/Trolltech/Qt-4.8.0/bin:$PATH
-#export QTDIR=/usr/share/qt4/
-#export QTWEBKIT_INSTALL=/data/webkit-install
-#export WEBKIT_SRC=/home/crameri/bugbuster/bugbuster-qtwebkit/Source
-#export LD_LIBRARY_PATH=$QTWEBKIT_INSTALL:$LD_LIBRARY_PATH
-
-# To compile using QtWebKit
-# export PKG_CONFIG_PATH=$QTWEBKIT_INSTALL/pkgconfig
-
-# CouchDB++
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-
-
 # Chromium depot_tools:
 export PATH=~/depot_tools:$PATH
 
@@ -129,13 +113,13 @@ git_branch() {
     b=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'`
     echo $b;
 }
-commits_behind_develop() {
-    # Is there a develop branch ?
-    d=`git branch 2>/dev/null | egrep '\s+develop$' | wc -l`
+commits_behind_master() {
+    # Is there a master branch ?
+    d=`git branch 2>/dev/null | egrep '\s+master$' | wc -l`
     if [[ $d == "1" ]]; then
-        n=`git rev-list HEAD..develop | wc -l`
+        n=`git rev-list HEAD..master | wc -l`
         if [[ $n != "0" ]]; then
-            echo "${BLINK}, $n commit(s) behind develop${NO_BLINK}"
+            echo "${BLINK}, $n commit(s) behind master${NO_BLINK}"
         fi;
     fi;
 }
@@ -146,18 +130,18 @@ git_prompt() {
     if [[ "$branch" == "" ]]; then
         echo "";
     else
-        echo "${PURPLE}[$branch$(commits_behind_develop)${PURPLE}]";
+        echo "${PURPLE}($branch$(commits_behind_master))";
     fi
 }
 build_prompt() {
-    PS1="${GREEN}$HOSTNAME${COLOR_NONE} \w $(git_prompt) \$${COLOR_NONE} "
+    PS1="${GREEN}\t${COLOR_NONE} \W $(git_prompt) \$${COLOR_NONE} "
 }
 
 PROMPT_COMMAND=build_prompt;
+# After each command, append to the history file and reread it
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
-# BUG BUSTER
-export BBSETUP_HOME=~/bugbuster/bugbuster-setup;
-export PYTHONPATH=~/bugbuster/bugbuster-setup/lib:$PYTHONPATH;
-export EDITOR=vim
+# Brew
+export PATH=/usr/local/sbin:$PATH
 
 source ~/.local_profile
