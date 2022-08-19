@@ -10,3 +10,10 @@ git fetch origin
 git branch master --set-upstream origin/master
 git pull
 ```
+
+Setup Vundle
+```
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+Launch `vim` and run `:PluginInstall`
