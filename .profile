@@ -75,26 +75,6 @@ export IGNOREEOF=2
 
 IS_64BIT=`uname -a | grep x86_64`
 
-# OASIS
-if [[ -z $IS_64BIT ]]; then
-  echo "32 BIT SYSTEM";
-  if [[ -d "/home/crameri/svn32/0.2" ]]; then
-      export OASIS_DIR=/home/crameri/svn32/0.2;
-      source $OASIS_DIR/env.sh
-  fi;
-else
-  echo "64 BIT SYSTEM";
-  if [[ -d "/home/crameri/oasis" ]]; then
-      export OASIS_DIR=/home/crameri/oasis;
-      source $OASIS_DIR/env.sh
-  fi;
-fi
-
-export PATH=/home/cluster/bin:/usr/local/share/npm/bin:$PATH
-
-# Chromium depot_tools:
-export PATH=~/depot_tools:$PATH
-
 # GIT
 RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
